@@ -5,7 +5,7 @@ import { GiftGrid } from "./components/GiftGrid"
 
 const GiftExpert = () => {
 
-    const [categories , setCategories ] = useState(['Fire', 'Drango ball'])
+    const [categories , setCategories ] = useState(['Fire'])
 
     const onAddCategory = ( newCategory) => {
 
