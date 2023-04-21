@@ -1,38 +1,42 @@
 import { useState } from "react"
 import { AddCategory } from "./components/AddCategory"
+import { GiftGrid } from "./components/GiftGrid"
 
 
 const GiftExpert = () => {
 
     const [categories , setCategories ] = useState(['Fire', 'Drango ball'])
 
-    console.log(categories)
+    const onAddCategory = ( newCategory) => {
 
-    const onAddCategory = () => {
-        console.log( 'Naruto');
-
-        setCategories([...categories, 'Naruto'])
-
+        if(categories.includes(newCategory)) return;
+        
+        setCategories([newCategory, ...categories])
+        // console.log(newCategory)
         // setCategories( categories => [...categories, 'Diego'])
     }
 
 
   return (
     <>
-    {/* titulo */}
+    
      <h1>GiftExpertApp</h1> 
 
-     {/* Input */}
-     <AddCategory />
+     <AddCategory   
+        onNewCategory = { onAddCategory }
+    //  setCategories = { setCategories} 
+    />
 
-     {/* listado */}
-     <button className="btn-agregar" onClick={onAddCategory} >Agregar categoria </button>
+     {/* <button className="btn-agregar" onClick={onAddCategory} >Agregar categoria </button> */}
 
-     <ul>
-        { categories.map( category => {
-            return <li key={ category }> {category} </li>
-        })}
-     </ul>
+    
+    { categories.map( category => (
+                    <GiftGrid 
+                    key={category}
+                    category={category}/>            
+    ))
+    }
+    
     </>
   )
 }
