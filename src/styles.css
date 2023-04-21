@@ -16,6 +16,7 @@ input {
   outline: none;
   padding: 10px 15px;
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 h2 {
@@ -60,4 +61,15 @@ h3 {
 
 .card img {
   width: 100%;
+}
+
+.btn-agregar {
+    padding: 1rem 2rem;
+    border:none;
+    background-color: #FF7F11;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    cursor:pointer;
 }
